@@ -1,0 +1,14 @@
+
+---
+- name:  copy_file managment nodes 
+  hosts: servers
+  become: true
+
+  tasks:
+    - name: Copy configuration file
+      ansible.builtin.copy:
+        src: app.conf
+        dest: /etc/app.conf
+        owner: root
+        group: root
+        mode: "0644"
